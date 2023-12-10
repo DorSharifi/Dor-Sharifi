@@ -17,7 +17,9 @@ def generate_random_password():
 
         return random_char
 
-    password = ''.join([generate_random_char() for x in range(12)])
+    password = random.choice(string.ascii_lowercase) + random.choice(string.ascii_uppercase) + random.choice(string.digits) + random.choice(string.punctuation)
+
+    password += ''.join([generate_random_char() for x in range(9)])
 
     return password
 
